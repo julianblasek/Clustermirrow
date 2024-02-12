@@ -1,0 +1,17 @@
+#! /cvmfs/software.hpc.rwth.de/Linux/RH8/x86_64/intel/skylake_avx512/software/Python/3.10.4-GCCcore-11.3.0/bin/python
+import sys
+sys.path = ["/rwthfs/rz/cluster/home/em632080/software/cobaya/code/planck/clik-main/lib/python/site-packages"]+sys.path
+
+import numpy as nm
+import clik.cldf as cldf
+import os.path as osp
+
+def main(argv):
+
+  base = osp.dirname(argv[1])
+  f = cldf.File(base)
+  print(f[osp.basename(argv[1])])
+
+import sys
+if __name__=="__main__":
+  main(sys.argv) 
